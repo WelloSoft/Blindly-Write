@@ -67,5 +67,14 @@ namespace WriteBlindly
         {
             _txt.SelectAll();
         }
+
+        private void _preInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Return)
+                return;
+            e.Handled = true;
+            _txt.AppendText(_preInput.Text);
+            _preInput.Clear();
+        }
     }
 }
